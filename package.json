@@ -1,0 +1,35 @@
+{
+  "name": "@react-sandbox/cursor-loader",
+  "version": "0.0.0",
+  "description": "Cursor loader component",
+  "author": "William Grosset (https://williamgrosset.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-sandbox/cursor-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/react-sandbox/cursor-loader/issues"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf ./dist",
+    "prepublish": "yarn clean && yarn build"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
