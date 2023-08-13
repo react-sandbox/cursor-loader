@@ -3,14 +3,14 @@ import { CursorLoaderProps } from '../types/CursorLoader'
 import './styles/CursorLoader.css'
 
 export default function CursorLoader({
-  load,
+  load = 0,
   color = 'white',
   size = 'sm',
   trailDelay = 300
 }: CursorLoaderProps) {
   const ref = useRef<HTMLDivElement>(null)
 
-  const convertLoadToDegree = (load: number): number => {
+  const convertLoadToDegrees = (load: number): number => {
     // 0..100 -> 0..360
     return (load * 360) / 100
   }
@@ -25,13 +25,16 @@ export default function CursorLoader({
   }
 
   useEffect(() => {
-    document.addEventListener('mousemove', updatePosition)
+    if (load > 0) {
+      document.addEventListener('mousemove', updatePosition)
+    }
+
     return () => {
       document.removeEventListener('mousemove', updatePosition)
     }
-  }, [])
+  }, [load])
 
-  const degree = convertLoadToDegree(load)
+  const degrees = convertLoadToDegrees(load)
 
   return (
     <div
@@ -40,7 +43,7 @@ export default function CursorLoader({
       data-trail-delay={trailDelay}
       ref={ref}
       style={{
-        background: `conic-gradient(${color} ${degree}deg, transparent calc(${degree}deg + 0.5deg) 100%)`
+        background: `conic-gradient(${color} ${degrees}deg, transparent calc(${degrees}deg + 0.5deg) 100%)`
       }}
     />
   )
