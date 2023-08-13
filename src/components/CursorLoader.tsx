@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, CSSProperties } from 'react'
 import { CursorLoaderProps } from '../types/CursorLoader'
 import './styles/CursorLoader.css'
 
@@ -40,11 +40,14 @@ export default function CursorLoader({
     <div
       data-sandbox-cursor-loader
       data-size={size}
-      data-trail-delay={trailDelay}
       ref={ref}
-      style={{
-        background: `conic-gradient(${color} ${degrees}deg, transparent calc(${degrees}deg + 0.5deg) 100%)`
-      }}
+      style={
+        {
+          '--color': color,
+          '--degrees': `${degrees}deg`,
+          '--delay': `${trailDelay}ms`
+        } as CSSProperties
+      }
     />
   )
 }

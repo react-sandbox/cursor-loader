@@ -1,14 +1,23 @@
+@property --degrees {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
 [data-sandbox-cursor-loader] {
   position: fixed;
   top: 50%;
   left: -100px;
   transform: translateX(-50%) translateY(-50%);
-
+  background: conic-gradient(
+    var(--color) var(--degrees),
+    transparent calc(var(--degrees) + 0.5deg) 100%
+  );
   border-radius: 50%;
-
   z-index: 10000;
   pointer-events: none;
-  transition: all 0ms ease-out;
+  transition: top var(--delay) ease-out, left var(--delay) ease-out,
+    transform var(--delay) ease-out, --degrees 300ms;
 }
 
 [data-sandbox-cursor-loader][data-size='sm'] {
@@ -24,20 +33,4 @@
 [data-sandbox-cursor-loader][data-size='lg'] {
   height: 80px;
   width: 80px;
-}
-
-[data-sandbox-cursor-loader][data-trail-delay='100'] {
-  transition-duration: 100ms;
-}
-
-[data-sandbox-cursor-loader][data-trail-delay='200'] {
-  transition-duration: 200ms;
-}
-
-[data-sandbox-cursor-loader][data-trail-delay='300'] {
-  transition-duration: 300ms;
-}
-
-[data-sandbox-cursor-loader][data-trail-delay='500'] {
-  transition-duration: 500ms;
 }
