@@ -1,9 +1,9 @@
-type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+type Size = 'sm' | 'md' | 'lg'
+type Delay = 0 | 100 | 200 | 300 | 500
 
 export interface CursorLoaderProps {
   load: number
-  size?: Size
   color?: string
-  trailDelay?: number
-  onComplete?: () => void
+  size?: Size
+  trailDelay?: Delay
 }
