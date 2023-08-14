@@ -4,7 +4,7 @@ import './styles/CursorLoader.css'
 
 export default function CursorLoader({
   load = 0,
-  color = 'white',
+  color = '#01D45B',
   size = 'sm',
   trailDelay = 300
 }: CursorLoaderProps) {
