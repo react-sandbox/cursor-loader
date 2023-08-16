@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@playwright/test': ^1.37.0
       '@types/react': ^18.2.14
       '@types/react-dom': ^18.2.6
       react: ^18.2.0
@@ -11,6 +12,7 @@ importers:
       tsup: ^7.1.0
       typescript: ^5.1.6
     devDependencies:
+      '@playwright/test': 1.37.0
       '@types/react': 18.2.20
       '@types/react-dom': 18.2.7
       react: 18.2.0

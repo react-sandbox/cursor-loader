@@ -17,10 +17,12 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "test": "playwright test",
     "clean": "rm -rf ./dist",
     "prepublish": "yarn clean && yarn build"
   },
   "devDependencies": {
+    "@playwright/test": "^1.37.0",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "react": "^18.2.0",
