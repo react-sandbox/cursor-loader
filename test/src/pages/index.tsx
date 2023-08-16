@@ -3,7 +3,7 @@ import Head from 'next/head'
 import CursorLoader from '@react-sandbox/cursor-loader'
 
 export default function Home() {
-  const [load, setLoad] = useState<number>(12)
+  const [load, setLoad] = useState<number>(25)
 
   return (
     <>
