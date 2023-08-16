@@ -6,8 +6,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('CursorLoader', () => {
   test('renders on cursor', async ({ page }) => {
-    await page.mouse.move(200, 200, { steps: 50 })
-
+    await page.mouse.move(200, 200, { steps: 100 })
     await expect(page.locator('[data-sandbox-cursor-loader]')).toHaveCSS(
       'top',
       '200px'
@@ -22,6 +21,14 @@ test.describe('CursorLoader', () => {
     await expect(page.locator('[data-sandbox-cursor-loader]')).toHaveAttribute(
       'data-size',
       'md'
+    )
+    await expect(page.locator('[data-sandbox-cursor-loader]')).toHaveCSS(
+      'height',
+      '45px'
+    )
+    await expect(page.locator('[data-sandbox-cursor-loader]')).toHaveCSS(
+      'width',
+      '45px'
     )
   })
 
