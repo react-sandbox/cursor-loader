@@ -13,6 +13,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install pnpm
+        run: npm install pnpm -g
+      - name: Install Playwright Browsers
       - name: Install dependencies
         run: pnpm install
       - name: Install Playwright Browsers
