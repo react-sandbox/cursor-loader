@@ -6,21 +6,13 @@
   <img src="example.gif" alt="Example" />
 </p>
 
-<p align="center">Cursor loader component.</p>
+<p align="center">🖱️ Cursor loader component.</p>
 
 ## Usage
 
 ### Install
 
-Install the `@react-sandbox/cursor-loader` package.
-
-With `yarn`:
-
-```bash
-yarn add @react-sandbox/cursor-loader
-```
-
-With `npm`:
+Install the `@react-sandbox/cursor-loader` package:
 
 ```
 npm install @react-sandbox/cursor-loader
@@ -50,8 +42,8 @@ function App() {
 | Prop         | Type                            | Default      | Description                       |
 | ------------ | ------------------------------- | ------------ | --------------------------------- |
 | `load`       | `number`                        | **required** | Load/progress (between 0 and 100) |
-| `color`      | `string`                        | `#01D45B`    | Color of loader                   |
-| `size`       | `'sm' \| 'md' \| 'lg'`          | `sm`         | Size of loader                    |
+| `color`      | `string`                        | `'#01D45B'`  | Color of loader                   |
+| `size`       | `'sm' \| 'md' \| 'lg'`          | `'sm'`       | Size of loader                    |
 | `trailDelay` | `0 \| 100 \| 200 \| 300 \| 500` | `300`        | Cursor trail delay                |
 
 ## Development
@@ -63,21 +55,19 @@ pnpm install
 pnpm dev
 ```
 
+### Tests
+
+```
+pnpm test
+```
+
 ### Example
 
 Inside `test/`:
 
 ```
-yarn install
-yarn dev
-```
-
-### Tests
-
-Inside `test/`:
-
-```
-yarn test
+pnpm install
+pnpm dev
 ```
 
 ## License
