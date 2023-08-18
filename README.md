@@ -45,6 +45,8 @@ function App() {
 | `color`      | `string`                        | `'#01D45B'`  | Color of loader                   |
 | `size`       | `'sm' \| 'md' \| 'lg'`          | `'sm'`       | Size of loader                    |
 | `trailDelay` | `0 \| 100 \| 200 \| 300 \| 500` | `300`        | Cursor trail delay                |
+| `className`  | `string`                        | `-`          | CSS classes                       |
+| `style`      | `React.CSSProperties`           | `-`          | CSS styles                        |
 
 ## Development
 

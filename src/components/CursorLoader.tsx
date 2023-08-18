@@ -6,7 +6,9 @@ export default function CursorLoader({
   load = 0,
   color = '#01D45B',
   size = 'sm',
-  trailDelay = 300
+  trailDelay = 300,
+  className,
+  style
 }: CursorLoaderProps) {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -41,11 +43,13 @@ export default function CursorLoader({
       data-sandbox-cursor-loader
       data-size={size}
       ref={ref}
+      className={className}
       style={
         {
           '--color': color,
           '--degrees': `${degrees}deg`,
-          '--delay': `${trailDelay}ms`
+          '--delay': `${trailDelay}ms`,
+          ...style
         } as CSSProperties
       }
     />

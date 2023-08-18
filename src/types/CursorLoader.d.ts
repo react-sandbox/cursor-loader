@@ -6,4 +6,6 @@ export interface CursorLoaderProps {
   color?: string
   size?: Size
   trailDelay?: Delay
+  className?: string
+  style?: React.CSSProperties
 }
