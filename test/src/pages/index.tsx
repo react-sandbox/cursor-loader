@@ -16,11 +16,21 @@ export default function Home() {
       <CursorLoader load={load} size="md" />
 
       <main>
-        <button onClick={() => setLoad(0)}>Clear Load</button>
-        <button onClick={() => setLoad(20)}>Set Load 20</button>
-        <button onClick={() => setLoad(50)}>Set Load 50</button>
-        <button onClick={() => setLoad(75)}>Set Load 75</button>
-        <button onClick={() => setLoad(100)}>Set Load 100</button>
+        <button className="load-0" onClick={() => setLoad(0)}>
+          Clear Load
+        </button>
+        <button className="load-25" onClick={() => setLoad(25)}>
+          Set Load 25
+        </button>
+        <button className="load-50" onClick={() => setLoad(50)}>
+          Set Load 50
+        </button>
+        <button className="load-75" onClick={() => setLoad(75)}>
+          Set Load 75
+        </button>
+        <button className="load-100" onClick={() => setLoad(100)}>
+          Set Load 100
+        </button>
       </main>
     </>
   )

@@ -2,16 +2,36 @@ import { test, expect } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/')
+  await page.locator('.load-25').click()
 })
 
 test.describe('CursorLoader', () => {
-  test('renders on cursor', async ({ page }) => {
+  test('updates position relative to mouse', async ({ page }) => {
     await page.mouse.move(200, 200, { steps: 100 })
+
     await expect(page.locator('[data-sandbox-cursor-loader]')).toHaveCSS(
       'top',
       '200px'
     )
     await expect(page.locator('[data-sandbox-cursor-loader]')).toHaveCSS(
+      'left',
+      '200px'
+    )
+  })
+
+  test('does not update position when load is 0', async ({ page }) => {
+    await page.locator('.load-0').click()
+    await page.mouse.move(200, 200, { steps: 100 })
+
+    await expect(page.locator('[data-sandbox-cursor-loader]')).toHaveCSS(
+      '--degrees',
+      '0deg'
+    )
+    await expect(page.locator('[data-sandbox-cursor-loader]')).not.toHaveCSS(
+      'top',
+      '200px'
+    )
+    await expect(page.locator('[data-sandbox-cursor-loader]')).not.toHaveCSS(
       'left',
       '200px'
     )
