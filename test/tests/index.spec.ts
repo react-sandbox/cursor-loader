@@ -72,4 +72,10 @@ test.describe('CursorLoader', () => {
       '300ms'
     )
   })
+
+  test('callback gets called on completion', async ({ page }) => {
+    await expect(page.locator('.load-100')).toHaveText('Set Load 100')
+    await page.locator('.load-100').click()
+    await expect(page.locator('.load-100')).toHaveText('Completed!')
+  })
 })

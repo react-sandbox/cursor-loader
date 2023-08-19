@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, CSSProperties } from 'react'
+import React, { useRef, useState, useEffect, CSSProperties } from 'react'
 import { CursorLoaderProps } from '../types/CursorLoader'
 import './styles/CursorLoader.css'
 
@@ -7,10 +7,12 @@ export default function CursorLoader({
   color = '#01D45B',
   size = 'sm',
   trailDelay = 300,
+  onComplete,
   className,
   style
 }: CursorLoaderProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const [completed, setCompleted] = useState<boolean>(false)
 
   const convertLoadToDegrees = (load: number): number => {
     // 0..100 -> 0..360
@@ -35,6 +37,16 @@ export default function CursorLoader({
       document.removeEventListener('mousemove', updatePosition)
     }
   }, [load])
+
+  useEffect(() => {
+    if (!completed && load >= 100) {
+      setCompleted(true)
+
+      if (onComplete !== undefined) {
+        onComplete()
+      }
+    }
+  }, [load, completed])
 
   const degrees = convertLoadToDegrees(load)
 

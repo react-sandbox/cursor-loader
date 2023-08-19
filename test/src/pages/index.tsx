@@ -4,6 +4,7 @@ import CursorLoader from '@react-sandbox/cursor-loader'
 
 export default function Home() {
   const [load, setLoad] = useState<number>(25)
+  const [text, setText] = useState<string>('Set Load 100')
 
   return (
     <>
@@ -13,7 +14,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <CursorLoader load={load} size="md" />
+      <CursorLoader
+        load={load}
+        size="md"
+        onComplete={() => setText('Completed!')}
+      />
 
       <main>
         <button className="load-0" onClick={() => setLoad(0)}>
@@ -29,7 +34,7 @@ export default function Home() {
           Set Load 75
         </button>
         <button className="load-100" onClick={() => setLoad(100)}>
-          Set Load 100
+          {text}
         </button>
       </main>
     </>
