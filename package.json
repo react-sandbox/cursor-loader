@@ -6,11 +6,21 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-sandbox/cursor-loader.git"
+    "url": "git+https://github.com/react-sandbox/cursor-loader.git"
   },
   "bugs": {
     "url": "https://github.com/react-sandbox/cursor-loader/issues"
   },
+  "keywords": [
+    "react",
+    "typescript",
+    "component",
+    "loader",
+    "cursor-loader"
+  ],
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -19,7 +29,7 @@
     "dev": "tsup --watch",
     "test": "playwright test",
     "clean": "rm -rf ./dist",
-    "prepublish": "yarn clean && yarn build"
+    "prepublish": "pnpm clean && pnpm build"
   },
   "devDependencies": {
     "@playwright/test": "^1.37.0",
