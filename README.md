@@ -4,6 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/actions/workflow/status/react-sandbox/cursor-loader/playwright.yml" alt="Build status" />
+  <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="Dependencies" />
   <img src="https://img.shields.io/bundlephobia/minzip/@react-sandbox/cursor-loader?color=%234ba0f6" alt="Build size" />
   <img src="https://img.shields.io/npm/dt/@react-sandbox/cursor-loader?color=%234ba0f6" alt="Package downloads" />
 </p>
