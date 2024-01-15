@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Enable Corepack before setting up Node
-        run: corepack enable
       - uses: actions/setup-node@v3
         with:
           node-version: 18
